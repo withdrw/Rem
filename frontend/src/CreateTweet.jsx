@@ -17,16 +17,13 @@ function CreateTweet() {
             console.log("SECOND ONE FOR CHANGE")
     }
 
-    const handleSubmit = (e) => {
-            e.preventDefault()
-            if (newTweet.trim() !== '') {
-                    console.log("THIS IS THE THIRD ONE")
-                dispatch(postTweets(newTweet))
-                console.log("THIS IS THE FOURTH ONE");
-                // console.log(dispatch(postTweets(tweet)));
-            }
-
-        }
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (newTweet.trim() !== "") {
+    dispatch(postTweets({ tweet: newTweet }))
+    setNewTweet("");
+  }
+};
 
 
     return (

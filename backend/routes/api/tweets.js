@@ -14,13 +14,14 @@ router.get(
   })
 );
 
-router.post('/new', async (req, res) => {
-  console.log("this is the req body ------------------------------------", req.body)
-   const { message } = req.body;
-   const newTweet = await Tweet.create({ message });
-   res.status(201).json(newTweet);
-})
-
+router.post(
+  '/',
+  asyncHandler(async (req, res) => {
+    const { tweet } = req.body;
+    const newTweet = await Tweet.create({ message: tweet })
+    res.status(201).json(newTweet);
+  })
+);
 
 // router.post(
 //   '/',

@@ -28,7 +28,7 @@ export const getAllTweets = () => async (dispatch) => {
 export const postTweets = (tweet) => async (dispatch) => {
   try {
     console.log("----------------->",tweet)
-    const response = await fetch("/api/tweets/new/", {
+    const response = await fetch("/api/tweets/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
